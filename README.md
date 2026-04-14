@@ -19,7 +19,7 @@ Create beautiful drawings with colorful tools, smooth brushes, and an easy-to-us
 
 ## 📸 Screenshots
 
-![Kids_Paint_World_UI](./screenshot.png)
+![Kids_Paint_World_UI](./screenshot.PNG)
 
 ---
 
