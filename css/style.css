@@ -1,0 +1,141 @@
+body {
+    background: linear-gradient(to right, #ffe0ec, #d0f4ff);
+    font-family: 'Comic Sans MS', cursive;
+}
+
+/* Header */
+.jumbotron {
+    background: linear-gradient(135deg, #89f7fe, #66a6ff);
+    border-radius: 20px;
+    padding: 20px;
+    margin: 10px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+/* Title */
+h1 {
+    color: white;
+    font-size: 40px;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+}
+
+/* Buttons */
+.btn {
+    border-radius: 20px;
+    padding: 8px 20px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    transform: scale(1.1);
+}
+
+/* Clear button */
+.clear button {
+    background: #ff6b6b;
+    border: none;
+}
+
+.clear button:hover {
+    background: #ff3b3b;
+}
+
+/* Color palette */
+.drawing-colors {
+    display: flex;
+    justify-content: center;
+    margin: 15px 0;
+}
+
+/* Color circles */
+.color-circle {
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+    margin: 8px;
+    border: 3px solid white;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.color-circle:hover {
+    transform: scale(1.3);
+}
+
+.color-circle.active {
+    border: 3px solid black;
+}
+
+/* Canvas board */
+.board {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+/* Canvas like cardboard */
+canvas {
+    background: #fffdf5;
+    border: 10px solid #d4a373; /* wooden frame */
+    border-radius: 15px;
+    box-shadow: inset 0 0 20px rgba(0,0,0,0.2),
+                0 10px 20px rgba(0,0,0,0.3);
+}
+
+/* Pen size */
+.pen-size {
+    margin-top: 10px;
+}
+
+/* Color picker */
+#favContainer {
+    margin-top: 10px;
+}
+
+.colorful-text span:nth-child(1) { color: red; }
+.colorful-text span:nth-child(2) { color: orange; }
+.colorful-text span:nth-child(3) { color: yellow; }
+.colorful-text span:nth-child(4) { color: green; }
+.colorful-text span:nth-child(6) { color: blue; }
+.colorful-text span:nth-child(7) { color: indigo; }
+.colorful-text span:nth-child(8) { color: violet; }
+
+/* continue pattern */
+.colorful-text span {
+    font-size: 42px;
+    font-weight: bold;
+}
+
+.rainbow-animate {
+    font-size: 45px;
+    font-weight: bold;
+    text-align: center;
+
+    background: linear-gradient(
+        270deg,
+        red,
+        orange,
+        yellow,
+        green,
+        cyan,
+        blue,
+        violet,
+        red
+    );
+
+    background-size: 600% 600%;
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    animation: rainbowMove 6s linear infinite;
+}
+
+/* Smooth flowing animation */
+@keyframes rainbowMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}

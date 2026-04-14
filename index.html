@@ -4,61 +4,72 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Paint box</title>
-</head>
-<link rel="stylesheet" href="css/bootstrap.css">
-<link rel="stylesheet" href="style.css">
-<link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
-<body>
-    <div class="container-fluid">
-        <div class="jumbotron">
-            <h1><i class="bi bi-paint-bucket bi-7x"></i>Painting_Box</h1>
-            <a class="btn btn-primary"href=""download="my_painting.jpg">Save</a>
-           
-            <div id="pen-tools" class="pen-tools">
-                <div id="drawing-colors" class="drawing-colors">
-                        <div  class="color-circle active" data-color="hotpink" onclick="selectColor(this)"></div>
-                        <div  class="color-circle" data-color="orange" onclick="selectColor(this)"></div>
-                        <div  class="color-circle" data-color="red" onclick="selectColor(this)"></div>
-                        <div  class="color-circle" data-color="yellow" onclick="selectColor(this)"></div>
-                        <div  class="color-circle" data-color="black" onclick="selectColor(this)"></div>
-                        <div  class="color-circle" data-color="blue" onclick="selectColor(this)"></div>
-                        <div  class="color-circle" data-color="white" onclick="selectColor(this)"></div>
-                        <div  class="color-circle" data-color="green" onclick="selectColor(this)"></div>
-                       <!--<div id="ers" class="color-circle1" data-color="white" onclick="selectColor(this)"><img src="#"></div>//--> 
-                </div>
-                <div class="clear"> <i class="fa fa-refresh btn-danger"><strong>clear</strong></i></div>
-                <div id="favContainer"><label for="favcolor"> Select your favourite color:</label>
-                    <input type="color" name="favcolor" id="favcolor " value="#ff0000" onchange="favColor(this)">
-                </div>
+    <title>ColorFun Studio</title>
 
-                <div id="pen-size" class="pen-size">
-                    <lable for="pen-size"><i class="fa fa-pencil"></i>Pen Size</lable>		
-                    <input type="range" name="pen-size" id="pen-size" value="10" step="5" min ="5" max="40" onchange="penSizeChange(this.value)">
-            
-                </div>
+    <!-- CSS should be inside head -->
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+</head>
+
+<body>
+<div class="container-fluid">
+    <div class="jumbotron text-center">
+        <h1 class="rainbow-animate">
+            <i class="bi bi-paint-bucket"></i> Kids Paint World
+        </h1>
+
+        <!-- Fix empty href -->
+        <a class="btn btn-primary" href="#" download="my_painting.jpg">Save</a>
+
+        <div id="pen-tools" class="pen-tools">
+
+            <!-- Colors -->
+            <div id="drawing-colors" class="drawing-colors">
+                <div class="color-circle active" data-color="hotpink" onclick="selectColor(this)"></div>
+                <div class="color-circle" data-color="orange" onclick="selectColor(this)"></div>
+                <div class="color-circle" data-color="red" onclick="selectColor(this)"></div>
+                <div class="color-circle" data-color="yellow" onclick="selectColor(this)"></div>
+                <div class="color-circle" data-color="black" onclick="selectColor(this)"></div>
+                <div class="color-circle" data-color="blue" onclick="selectColor(this)"></div>
+                <div class="color-circle" data-color="white" onclick="selectColor(this)"></div>
+                <div class="color-circle" data-color="green" onclick="selectColor(this)"></div>
+            </div>
+
+            <!-- Clear Button -->
+            <div class="clear">
+                <button class="btn btn-danger" onclick="clearCanvas()">Clear</button>
+            </div>
+
+            <!-- Color Picker -->
+            <div id="favContainer">
+                <label for="favcolor">Select your favourite color:</label>
+                <!-- FIX: removed space in id -->
+                <input type="color" name="favcolor" id="favcolor" value="#ff0000" onchange="favColor(this)">
+            </div>
+
+            <!-- Pen Size -->
+            <div class="pen-size">
+                <!-- FIX: label spelling -->
+                <label for="penSizeRange">Pen Size</label>
+                <!-- FIX: duplicate id removed -->
+                <input type="range" id="penSizeRange" value="10" step="5" min="5" max="40" onchange="penSizeChange(this.value)">
             </div>
         </div>
     </div>
-            <div class="tool_bar">
-               
+</div>
 
-            </div>
-                 
-                     
-                 
-                     
-             </div>
+<!-- Canvas -->
+<div class="board text-center">
+    <!-- FIX: canvas height should not be vh -->
+    <canvas id="canvas" width="1065" height="400"></canvas>
+</div>
 
-
-           
-            <div class="board">
-                <canvas width="1265px" height="500vh"></canvas>
-            </div>
-    
-    <script src="js/bootstrap.js"></script>
-    <script src="js/jquery-3.5.1.js"></script>
-    <script src="script.js"></script>
+<!-- JS -->
+<!-- jQuery should come before bootstrap -->
+<script src="js/jquery-3.5.1.js"></script>
+<script src="js/bootstrap.js"></script>
+<script src="js/script.js"></script>
 </body>
 </html>
